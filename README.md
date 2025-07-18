@@ -56,3 +56,12 @@ TMS is a Spring Boot backend system for managing tax-related operations such as 
 ```bash
 git clone <your-repo-url>
 cd tms
+mvn clean install
+mvn spring-boot:run
+java -jar target/tms-0.0.1-SNAPSHOT.jar
+http://localhost:8080
+| Method | Endpoint             | Description                       | Request Body / Params                       |
+| ------ | -------------------- | --------------------------------- | ------------------------------------------- |
+| POST   | `/api/claims`        | Submit a new tax claim            | JSON payload with claim data                |
+| GET    | `/api/claims/{id}`   | Get a tax claim by ID             | Path variable `id`                          |
+| GET    | `/api/tax/calculate` | Compute tax based on query params | Query parameters (e.g., income, deductions) |
